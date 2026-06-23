@@ -17,7 +17,7 @@ type Human struct {
 	name string
 }
 
-// dog er
+// dog er receiver function
 func (d Dog) speak() {
 	fmt.Println("Woof!!!")
 }
