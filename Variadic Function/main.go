@@ -28,7 +28,7 @@ func main() {
 
 	mps := []string{"Jamal", "Kamal", "Khairul", "Milon", "Hero Alam"}
 
-	greet("Welcome", mps...) // []string{"Jamal", "Kamal", "Khairul"} => "Jamal", "Kamal", "Khairul"
+	greet("Welcome", mps...) // ----> Variadic argument--->3 dots at last []string{"Jamal", "Kamal", "Khairul"} => "Jamal", "Kamal", "Khairul"
 
 }
 
