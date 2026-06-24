@@ -192,7 +192,7 @@ func main() {
 	students := []Student{
 		{
 			Name:   "Shafayat",
-			Grades: []int{90, 85, 95},
+			Grades: []int{90, 85, 95}, //these are the slices
 		},
 		{
 			Name:   "Rahim",
