@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // -------- Task 1
 // type Speaker interface {
 // 	speak()
@@ -99,6 +101,34 @@ package main
 // 	fmt.Println("Account Money:", ba.Balence)
 
 // }
+
+// -------------> Task 5
+type Student struct {
+	Name   string
+	Grades []int
+}
+
+func (st Student) Average() float64 {
+	total := 0
+	for _, grade := range st.Grades {
+		total += grade
+	}
+	return float64(total) / float64(len(st.Grades))
+}
+
+func (s Student) LetterGrade() string {
+	avg := s.Average()
+
+	if avg >= 90 {
+		return "A"
+	} else if avg >= 80 {
+		return "B"
+	} else if avg >= 70 {
+		return "C"
+	} else {
+		return "F"
+	}
+}
 func main() {
 	//Task 1
 	// animals := []Animal{{
@@ -158,5 +188,28 @@ func main() {
 	// account.Display()
 	// account.WithDraw(3000)
 	// account.Display()
+
+	students := []Student{
+		{
+			Name:   "Shafayat",
+			Grades: []int{90, 85, 95},
+		},
+		{
+			Name:   "Rahim",
+			Grades: []int{75, 80, 70},
+		},
+		{
+			Name:   "Karim",
+			Grades: []int{60, 65, 55},
+		},
+	}
+
+	for _, student := range students {
+		fmt.Println("Student:", student.Name)
+		fmt.Println("Grades:", student.Grades)
+		fmt.Printf("Average: %.2f\n", student.Average())
+		fmt.Println("Grade:", student.LetterGrade())
+		fmt.Println("-------------------")
+	}
 
 }
